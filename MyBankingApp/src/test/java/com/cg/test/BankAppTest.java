@@ -55,6 +55,7 @@ public class BankAppTest {
 		customer.setCustomerId(1001);
 		customer.setCustomerName("Tom");
 		customer.setAddress(new Address("Pune","Maharashtra"));
+		System.out.println(customer+"\t"+customer.hashCode());
 		Assert.assertEquals(bankService.createAccount(customer,2000).getCustomer(), customer);
 		
 		
