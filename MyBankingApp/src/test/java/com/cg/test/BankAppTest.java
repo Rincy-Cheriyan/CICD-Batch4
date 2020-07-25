@@ -51,10 +51,16 @@ public class BankAppTest {
 	@Test
 	public void checkCustomerId() throws MinimumBalanceException
 	{
+		Account account=new Account();
+		
 		Customer customer =new Customer();
 		customer.setCustomerId(1001);
 		customer.setCustomerName("Tom");
 		customer.setAddress(new Address("Pune","Maharashtra"));
+		
+		account.setAccNo(123);
+		account.setOpeningBalance(1500);
+		account.setCustomer(customer);
 		Assert.assertEquals(bankService.createAccount(customer,2000).getCustomer(), customer);
 		
 		
